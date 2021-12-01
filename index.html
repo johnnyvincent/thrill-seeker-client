@@ -11,7 +11,101 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+
+    <h1 id="logo">A Thrill Seeker's Database</h1>
+
+    <p id="sign-out-success"></p>
+    <p id="sign-up-success"></p>
+    <p id="error-message"></p>
+
+
+<section id="before-sign-in">
+      <form id="sign-in" class="border">
+        <fieldset>
+          <legend>Sign In</legend>
+          <input name="credentials[email]" type="text" placeholder="Email" required>
+          <input type="password" name="credentials[password]" placeholder="Password" required>
+          <button class="button">Sign In</button>
+
+          <legend>Not registered yet?</legend>
+          <button class="button">Register</button>
+
+        </fieldset>
+      </form>
+      </section>
+      <div ></div>
+
+    
+      <form id="sign-up" class="border">
+              <fieldset>
+                <legend>Registration</legend>
+                <input type="text" name="credentials[email]" placeholder="Email" required>
+                <input type="password" name="credentials[password]" placeholder="Password" required>
+                <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation" required>
+                <button class="button">Register</button>
+              </fieldset>
+      </form>
+      </section>
+
+
+
+    <div class="container" id="after-sign-in">
+
+      <body>
+        <h1>Thrill Seeker</h1>
+        <main>
+          <section> 
+            <h2>Get All Parks</h2>
+            <button id="parks-search" >Get All Parks</button>
+            <hr>
+            <h2>Get One Park</h2>
+            <form id="park-search">
+              <input type="text" placeholder="Park Name" name="park[name]" required> 
+              <button>Get Park</button>
+            </form>
+            <hr>
+            <h2>Delete One Park</h2>
+            <form id="park-delete">
+              <input type="text" placeholder="Park Name" name="park[name]" required> 
+              <button>Delete Park</button>
+            </form>
+            <hr>
+            <h2>Update One Park</h2>
+            <form id="books-update">
+              <input type="text"  name="park[name]" placeholder="Park Name" required> 
+              <input type="text" name="park[address]" placeholder="Address" required>
+              <input type="text" name="park[theme]" placeholder="Theme" required>
+              <button>Update Park</button>
+            </form>
+            <hr>
+  
+            <h2>Create One Park</h2>
+            <form id="park-create">
+              <input type="text"  name="park[name]" placeholder="Park Name" required> 
+              <input type="text" name="park[address]" placeholder="Address" required>
+              <input type="text" name="park[theme]" placeholder="Theme" required>
+              <button>Create Book</button>
+            </form>
+          </section>
+          <section> 
+            <h3>Event Bubbling Demo</h3>
+            <div id="event-div">
+              <button id="event-button">Click Me</button>
+              <button class="books-destroy-dynamic">Destroy Book Dynamic</button>
+              <form id="books-update-dynamic">
+                <input type="text" name="book[title" placeholder="Title" required>
+                <input type="text" name="book[author]" placeholder="Author" required>
+                <button>Update Book Dynamic</button>
+              </form>
+            </div>
+          </section>
+  
+          <section>
+            <div id="parks-crud-error-message"></div>
+            <div id="parks-display"></div>
+          </section>
+        </main>
+
+      </div>
+      </body>
 </html>

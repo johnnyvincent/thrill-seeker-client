@@ -1,1 +1,109 @@
 @import '~bootstrap/scss/bootstrap';
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+
+body {
+  background-color: #a8dadc;
+}
+
+.container {
+  padding: 25px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+#sign-up {
+  display: flex;
+  justify-content: center;
+  align-items: center
+
+}
+#sign-in {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+#game-board {
+display: flex;
+flex-wrap: wrap;
+width: 450px;
+margin: 10px auto;
+background-color: #f1faee
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  font-size: 140px;
+  font-weight: bolder;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #345;
+}
+
+h1, h2 {
+text-align: center;
+color: #1d3557;
+font-size: 100px;
+text-shadow: -1px 1px 0 #000,
+1px 1px 0 #000,
+1px -1px 0 #000;
+
+}
+
+.alt-color {
+  background-color: #1d3557;
+}
+
+ #new-game {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100px;
+   height: 50px;
+   background-color: #457b9d;
+   color: white;
+    }
+ #after-sign-in {
+  display: none;
+}
+
+
+th, td
+{
+  border: 3px solid #345;
+}
+p {
+  text-align: center;
+
+}
+#new-game-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+}
+
+#game-display {
+font-size: 40px;
+color: black;
+}
+
+#sign-out {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 50px;
+  background-color: #457b9d;
+  color: white;
+}
+.button {
+  background-color: #f1faee;
+}

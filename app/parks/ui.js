@@ -16,12 +16,13 @@ const onGetParksSuccess = (responseData) => {
             <p>Address: ${park.address}</p>
             <p>Theme: ${park.theme}</p>
         
-         <button class="books-destroy-dynamic" data-id=${book._id}>
+         <button class="books-destroy-dynamic" data-id=${park._id}>
          Destroy Book </button>
 
-         <form class="books-update-dynamic" data-id=${book._id}>
-             <input type="text" name="book[title]" placeholder="Title" data-id=${book.title} required>
-             <input type="text" name="book[author]" placeholder="Author" data-id=${book.author} required>
+         <form class="parks-update-dynamic" data=${park._id}>
+             <input type="text" name="park[name]" placeholder="Park Name" data-id=${park.name} required>
+             <input type="text" name="park[address]" placeholder="Park Address" data-id=${park.address} required>
+             <input type="text" name="park[theme]" placeholder="Park Theme" data-id=${park.theme} required>
              <button>Update Book</button>
            </form>
     

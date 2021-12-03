@@ -27,17 +27,14 @@
           <input type="password" name="credentials[password]" placeholder="Password" required>
           <button class="button">Sign In</button>
 
-          <legend>Not registered yet?</legend>
-          <button class="button">Register</button>
-
         </fieldset>
       </form>
-      </section>
-      <div ></div>
+      
 
     
       <form id="sign-up" class="border">
               <fieldset>
+                <legend>Not registered yet?</legend>
                 <legend>Registration</legend>
                 <input type="text" name="credentials[email]" placeholder="Email" required>
                 <input type="password" name="credentials[password]" placeholder="Password" required>
@@ -45,9 +42,8 @@
                 <button class="button">Register</button>
               </fieldset>
       </form>
-      </section>
 
-
+    </section>
 
     <div class="container" id="after-sign-in">
 
@@ -71,7 +67,7 @@
             </form>
             <hr>
             <h2>Update One Park</h2>
-            <form id="books-update">
+            <form id="parks-update">
               <input type="text"  name="park[name]" placeholder="Park Name" required> 
               <input type="text" name="park[address]" placeholder="Address" required>
               <input type="text" name="park[theme]" placeholder="Theme" required>
@@ -91,11 +87,12 @@
             <h3>Event Bubbling Demo</h3>
             <div id="event-div">
               <button id="event-button">Click Me</button>
-              <button class="books-destroy-dynamic">Destroy Book Dynamic</button>
-              <form id="books-update-dynamic">
-                <input type="text" name="book[title" placeholder="Title" required>
-                <input type="text" name="book[author]" placeholder="Author" required>
-                <button>Update Book Dynamic</button>
+              <button class="parks-destroy-dynamic">Destroy Park Dynamic</button>
+              <form id="parks-update-dynamic">
+                <input type="text" name="park[name]" placeholder="Name" required>
+                <input type="text" name="park[address]" placeholder="Address" required>
+                <input type="text" name="park[theme]" placeholder="Theme" required>
+                <button>Update Park Dynamic</button>
               </form>
             </div>
           </section>
@@ -104,8 +101,16 @@
             <div id="parks-crud-error-message"></div>
             <div id="parks-display"></div>
           </section>
-        </main>
+          <section>
+            <form id="change-password">
+              <input type="password"  name="credentials[password]" placeholder="Old Password" required> 
+              <input type="password" name="credentials[password]" placeholder="New Password" required>
+              <button>Change Password</button>
+            </form>
 
-      </div>
+            <button id="sign-out">Sign Out</button>
+          </section>
+        </main>
       </body>
+      </div>
 </html>

@@ -1,16 +1,16 @@
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
-const setAPIOrigin = require('../../lib/set-api-origin')
-const config = require('./config')
-$(() => {
-  setAPIOrigin(location, config)
-})
+// const setAPIOrigin = require('../../lib/set-api-origin')
+// const config = require('./config')
+// $(() => {
+//   setAPIOrigin(location, config)
+// })
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
-const parkEvents = require('../parks/events')
-const authEvents = require('../auth/events')
+const parkEvents = require('./parks/events')
+const authEvents = require('./auth/events')
 
 $(() => {
   $('#parks-search').on('submit', parkEvents.onGetParks)

@@ -1,20 +1,22 @@
 'use strict'
 
-const config = require('../config')
-const store = require('../store')
+// const config = require('../config')
+// const store = require('../store')
 
 const onGetParksSuccess = (responseData) => {
-  const parks = responseData.books
-  console.log(responseData)
+  $('#parks-display').text('All Parks successfully received')
+  $('#parks-display').removeClass()
+  console.log('onIndexSuccess ran. responseData is :', responseData)
 
   let parksHtml = ''
-
+  const parks = responseData.parks
   parks.forEach(park => {
     parksHtml += `
         <div>
             <h4>Name: ${park.name}</h4>
             <p>Address: ${park.address}</p>
             <p>Theme: ${park.theme}</p>
+            <p>ID: ${park._id}</p>
         
          <button class="books-destroy-dynamic" data-id=${park._id}>
          Destroy Book </button>
@@ -72,7 +74,7 @@ const onCreateParkSuccess = function () {
 const onError = function (err) {
   console.error(err)
 
-  $('#error-message').text('Something went wrong, please try again')
+  $('#parks-crud-error-message').text('Something went wrong, please try again')
   $('#error-message').addClass('text-danger')
   setTimeout(() => {
     $('#error-message').html('')
@@ -82,10 +84,10 @@ const onError = function (err) {
 }
 
 module.exports = {
-    onGetParksSuccess,
-    onGetParkSuccess,
-    onDestroyParkSuccess,
-    onUpdateParkSuccess,
-    onCreateParkSuccess,
-    onError
+  onGetParksSuccess,
+  onGetParkSuccess,
+  onDestroyParkSuccess,
+  onUpdateParkSuccess,
+  onCreateParkSuccess,
+  onError
 }

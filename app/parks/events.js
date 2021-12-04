@@ -3,8 +3,8 @@
 const getFormFields = require('../../lib/get-form-fields')
 // const store = require('../store')
 //
-const parksApi = require('./api')
-const parksUi = require('./ui')
+const api = require('./api')
+const ui = require('./ui')
 
 // get in the habit of naming your handlers, it eases debugging.
 //
@@ -18,11 +18,26 @@ const parksUi = require('./ui')
 // beginning with 'on' to denote that it is done when the GET /books
 // button is clicked
 
+const onCreatePark = function (event) {
+  event.preventDefault()
+  console.log('onCreatePark ran!')
+  const form = event.target
+  const formData = getFormFields(form)
+  //   const parkName = formData.park.name
+  //   const parkAddress = formData.park.address
+  //   const parkTheme = formData.park.theme
+
+  api
+    .create(formData)
+    .then(ui.onCreateParkSuccess)
+    .catch(ui.onError)
+}
 const onGetParks = function (event) {
   event.preventDefault()
-  parksApi.index()
-    .then(parksUi.onGetParksSuccess)
-    .catch(parksUi.onError)
+  console.log('onGetParks ran!')
+  api.index()
+    .then(ui.onGetParksSuccess)
+    .catch(ui.onError)
 }
 
 const onGetPark = function (event) {
@@ -32,9 +47,9 @@ const onGetPark = function (event) {
   const formData = getFormFields(form)
   console.log(formData)
   const parkName = formData.park.name
-  parksApi.show(parkName)
-    .then(parksUi.onGetParkSuccess)
-    .catch(parksUi.onError)
+  api.show(parkName)
+    .then(ui.onGetParkSuccess)
+    .catch(ui.onError)
 }
 
 const onDeletePark = function (event) {
@@ -44,9 +59,9 @@ const onDeletePark = function (event) {
   console.log(formData)
 
   const parkName = formData.park.name
-  parksApi.destroy(parkName)
-    .then(parksUi.onDeleteParkSuccess)
-    .catch(parksUi.onError)
+  api.destroy(parkName)
+    .then(ui.onDeleteParkSuccess)
+    .catch(ui.onError)
 }
 
 const onUpdatePark = function (event) {
@@ -55,32 +70,13 @@ const onUpdatePark = function (event) {
   const formData = getFormFields(form)
   console.log(formData)
 
-  const parkName = formData.park.name
-  const parkAddress = formData.park.address
-  const parkTheme = formData.park.theme
-  parksApi
-    .update(parkName, formData)
-    .update(parkAddress, formData)
-    .update(parkTheme, formData)
-    .then(parksUi.onUpdateParkSuccess)
-    .catch(parksUi.onError)
-}
-
-const onCreatePark = function (event) {
-  event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
-  console.log(formData)
-  const parkName = formData.park.name
-  const parkAddress = formData.park.address
-  const parkTheme = formData.park.theme
-
-  parksApi
-    .create(parkName, formData)
-    .create(parkAddress, formData)
-    .create(parkTheme, formData)
-    .then(parksUi.onCreateParkSuccess)
-    .catch(parksUi.onError)
+  //   const parkName = formData.park.name
+  //   const parkAddress = formData.park.address
+  //   const parkTheme = formData.park.theme
+  api
+    .update(formData)
+    .then(ui.onUpdateParkSuccess)
+    .catch(ui.onError)
 }
 
 module.exports = {

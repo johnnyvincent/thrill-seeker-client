@@ -48,26 +48,27 @@
     <div class="container" id="after-sign-in">
 
       <body>
-        <h1>Thrill Seeker</h1>
+        <div id="parks-display"></div>
         <main>
           <section> 
+            <form id="parks-search">
             <h2>Get All Parks</h2>
-            <button id="parks-search" >Get All Parks</button>
-            <hr>
+            <button>Get All Parks</button>
+            </form> <hr>
             <h2>Get One Park</h2>
             <form id="park-search">
-              <input type="text" placeholder="Park Name" name="park[name]" required> 
+              <input type="text" name="park[name]" placeholder="Park Name"  required> 
               <button>Get Park</button>
             </form>
             <hr>
             <h2>Delete One Park</h2>
             <form id="park-delete">
-              <input type="text" placeholder="Park Name" name="park[name]" required> 
+              <input type="text" name="park[name]" placeholder="Park Name"  required> 
               <button>Delete Park</button>
             </form>
             <hr>
             <h2>Update One Park</h2>
-            <form id="parks-update">
+            <form id="park-update">
               <input type="text"  name="park[name]" placeholder="Park Name" required> 
               <input type="text" name="park[address]" placeholder="Address" required>
               <input type="text" name="park[theme]" placeholder="Theme" required>
@@ -77,10 +78,10 @@
   
             <h2>Create One Park</h2>
             <form id="park-create">
-              <input type="text"  name="park[name]" placeholder="Park Name" required> 
-              <input type="text" name="park[address]" placeholder="Address" required>
-              <input type="text" name="park[theme]" placeholder="Theme" required>
-              <button>Create Book</button>
+              <input type="text"  name="park[name]" placeholder="Enter Park Name" required> 
+              <input type="text" name="park[address]" placeholder="Enter Park Address" required>
+              <input type="text" name="park[theme]" placeholder="Enter Park Theme" required>
+              <button>Create Park</button>
             </form>
           </section>
           <section> 
@@ -99,13 +100,15 @@
   
           <section>
             <div id="parks-crud-error-message"></div>
-            <div id="parks-display"></div>
           </section>
           <section>
             <form id="change-password">
-              <input type="password"  name="credentials[password]" placeholder="Old Password" required> 
-              <input type="password" name="credentials[password]" placeholder="New Password" required>
-              <button>Change Password</button>
+              <fieldset>
+                <legend>Change Password!</legend>
+                <input type="password"  name="passwords[old]" placeholder="Old Password" required> 
+                <input type="password" name="passwords[new]" placeholder="New Password" required>
+                <button>Change Password</button>
+              </fieldset> 
             </form>
 
             <button id="sign-out">Sign Out</button>

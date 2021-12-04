@@ -1,4 +1,4 @@
-# VARIABLE=VALUE sh curl-scripts/auth/sign-in.sh
+# EMAIL="" PASSWORD="" sh curl-scripts/auth/sign-in.sh
 
 # existing details: h@h8
 # password: fun

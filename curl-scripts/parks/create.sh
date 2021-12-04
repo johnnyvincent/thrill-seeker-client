@@ -1,6 +1,6 @@
 # Ex: TOKEN=tokengoeshere NAME=titlegoeshere ADDRESS=joeshmoe THEME=themegoeshere sh curl-scripts/parks/create.sh
 
-curl "https://library-express-api.herokuapp.com/movies" \
+curl "https://salty-temple-53843.herokuapp.com/parks" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \

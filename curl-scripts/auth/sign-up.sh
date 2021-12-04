@@ -5,7 +5,7 @@
 
 # EMAIL=h@h8 PASSWORD=fun sh curl-scripts/auth/sign-in.sh
 
-curl "http://localhost:4741/sign-in" \
+curl "https://salty-temple-53843.herokuapp.com/sign-in" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \

@@ -59,16 +59,16 @@ const signOutFailure = function (error) {
 }
 
 const changePasswordSuccess = function (responseData) {
-  $('#change-password-update').text('Password changed successfully!').fadeOut(3000)
-  $('#change-password-update').removeClass()
+  $('#change-password-success').text('Password changed successfully!').fadeOut(3000)
+  $('#change-password-success').removeClass()
 
   $('form').trigger('reset')
   console.log('responseData is', responseData)
 }
 
 const changePasswordFailure = function (error) {
-  $('#change-password-update').text('Password change failed, please try again!').fadeOut(3000)
-  $('#change-password-update').removeClass()
+  $('#change-password-failure').text('Password change failed, please try again!').fadeOut(3000)
+  $('#change-password-failure').removeClass()
 
   console.log('error is ', error)
 }

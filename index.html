@@ -26,7 +26,7 @@
       <form id="sign-in" class="border">
         <fieldset>
           <legend>Sign In</legend>
-          <input name="credentials[email]" type="text" placeholder="Email" required>
+          <input type="text" name="credentials[email]"  placeholder="Email" required>
           <input type="password" name="credentials[password]" placeholder="Password" required>
           <button class="button">Sign In</button>
 
@@ -37,8 +37,7 @@
     
       <form id="sign-up" class="border">
               <fieldset>
-                <legend>Not registered yet?</legend>
-                <legend>Registration</legend>
+                <legend id="centered">Not registered yet?</legend>
                 <input type="text" name="credentials[email]" placeholder="Email" required>
                 <input type="password" name="credentials[password]" placeholder="Password" required>
                 <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation" required>
@@ -62,20 +61,16 @@
             <h2>Get All Parks</h2>
             <button>Get All Parks</button>
             </form> <hr>
-            <h2>Get One Park</h2>
-            <form id="park-search">
-              <p id="find-park-success"></p>
-              <input type="text" name="park[id]" placeholder="Enter Park ID"  required> 
-              <button>Get Park</button>
+
+            <h2>Create One Park</h2>
+            <form id="park-create">
+              <p id="create-park-success"></p>
+              <input type="text"  name="park[name]" placeholder="Enter Park Name" required> 
+              <input type="text" name="park[address]" placeholder="Enter Park Address" required>
+              <input type="text" name="park[theme]" placeholder="Enter Park Theme" required>
+              <button>Create Park</button>
             </form>
-            <hr>
-            <h2>Delete One Park</h2>
-            <form id="park-delete">
-              <p id="delete-park-success"></p>
-              <input type="text" name="park[id]" placeholder="Enter Park ID"  required> 
-              <button>Delete Park</button>
-            </form>
-            <hr>
+
             <h2>Update One Park</h2>
             <form id="park-update">
               <p id="update-park-success"></p>
@@ -85,33 +80,27 @@
               <input type="text" name="park[theme]" placeholder="Theme" required>
               <button>Update Park</button>
             </form>
-            <hr>
-  
-            <h2>Create One Park</h2>
-            <form id="park-create">
-              <p id="create-park-success"></p>
-              <input type="text"  name="park[name]" placeholder="Enter Park Name" required> 
-              <input type="text" name="park[address]" placeholder="Enter Park Address" required>
-              <input type="text" name="park[theme]" placeholder="Enter Park Theme" required>
-              <button>Create Park</button>
+
+            <h2>Get One Park</h2>
+            <form id="park-search">
+              <p id="find-park-success"></p>
+              <input type="text" name="park[id]" placeholder="Enter Park ID"  required> 
+              <button>Get Park</button>
             </form>
+            <hr>
+
+            <h2>Delete One Park</h2>
+            <form id="park-delete">
+              <p id="delete-park-success"></p>
+              <input type="text" name="park[id]" placeholder="Enter Park ID"  required> 
+              <button>Delete Park</button>
+            </form>
+            <hr>
           </section>
-          <!-- <section> 
-            <h3>Event Bubbling Demo</h3>
-            <div id="event-div">
-              <button id="event-button">Click Me</button>
-              <button class="parks-destroy-dynamic">Destroy Park Dynamic</button>
-              <form id="parks-update-dynamic">
-                <input type="text" name="park[name]" placeholder="Name" required>
-                <input type="text" name="park[address]" placeholder="Address" required>
-                <input type="text" name="park[theme]" placeholder="Theme" required>
-                <button>Update Park Dynamic</button>
-              </form>
-            </div>
-          </section>  -->
   
           <section>
-            <div id="change-password-update"></div>
+            <p id="change-password-success"></p>
+            <p id="change-password-failure"></p>
           </section>
           <section>
             <form id="change-password">

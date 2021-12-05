@@ -24,6 +24,7 @@ const onGetParksSuccess = (responseData) => {
   })
 
   $('#parks-display').html(parksHtml)
+  $('#parks-display').removeClass()
 }
 
 const onGetParkSuccess = function (responseData) {
@@ -59,14 +60,14 @@ const onUpdateParkSuccess = function () {
 }
 
 const onCreateParkSuccess = function () {
-  $('#create-park-success').text('Park was successfully created').fadeOut(3000)
+  $('#create-park-success').text('Park was successfully created. Click Get All Parks to see updated list.').fadeOut(3000)
   $('form').trigger('reset')
 }
 
 const onError = function (err) {
   console.error(err)
 
-  $('#parks-crud-error-message').text('Something went wrong, please try again')
+  $('#parks-crud-error-message').text('Something went wrong, please try again').fadeOut(4000)
   $('#error-message').addClass('text-danger')
   setTimeout(() => {
     $('#error-message').html('')

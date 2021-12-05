@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <h1 id="logo">A Thrill Seeker's Database</h1>
+    <p id="find-parks-success"></p>
+          <section>
+            <div id="parks-crud-error-message"></div>
+          </section>
+    <p id="sign-out-success"></p>
+    <p id="sign-up-success"></p>
+    <p id="error-message"></p>
+
+
+<section id="before-sign-in">
+      <form id="sign-in" class="border">
+        <fieldset>
+          <legend>Sign In</legend>
+          <input type="text" name="credentials[email]"  placeholder="Email" required>
+          <input type="password" name="credentials[password]" placeholder="Password" required>
+          <button class="button">Sign In</button>
+
+        </fieldset>
+      </form>
+      
+
+    
+      <form id="sign-up" class="border">
+              <fieldset>
+                <legend id="centered">Not registered yet?</legend>
+                <input type="text" name="credentials[email]" placeholder="Email" required>
+                <input type="password" name="credentials[password]" placeholder="Password" required>
+                <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation" required>
+                <button class="button">Register</button>
+              </fieldset>
+      </form>
+
+    </section>
+
+    <div class="container" id="after-sign-in">
+
+      <body>
+        <section>
+          <div id="update-success"></div>
+        </section>
+        
+        <div id="parks-display"></div>
+        <main>
+          <section> 
+            <form id="parks-search">
+            <h2>Get All Parks</h2>
+            <button>Get All Parks</button>
+            </form> <hr>
+
+            <h2>Create One Park</h2>
+            <form id="park-create">
+              <p id="create-park-success"></p>
+              <input type="text"  name="park[name]" placeholder="Enter Park Name" required> 
+              <input type="text" name="park[address]" placeholder="Enter Park Address" required>
+              <input type="text" name="park[theme]" placeholder="Enter Park Theme" required>
+              <button>Create Park</button>
+            </form>
+
+            <h2>Update One Park</h2>
+            <form id="park-update">
+              <p id="update-park-success"></p>
+              <input type="text"  name="park[id]" placeholder="Enter Park ID" required>
+              <input type="text"  name="park[name]" placeholder="Park Name" required> 
+              <input type="text" name="park[address]" placeholder="Address" required>
+              <input type="text" name="park[theme]" placeholder="Theme" required>
+              <button>Update Park</button>
+            </form>
+
+            <h2>Get One Park</h2>
+            <form id="park-search">
+              <p id="find-park-success"></p>
+              <input type="text" name="park[id]" placeholder="Enter Park ID"  required> 
+              <button>Get Park</button>
+            </form>
+            <hr>
+
+            <h2>Delete One Park</h2>
+            <form id="park-delete">
+              <p id="delete-park-success"></p>
+              <input type="text" name="park[id]" placeholder="Enter Park ID"  required> 
+              <button>Delete Park</button>
+            </form>
+            <hr>
+          </section>
+  
+          <section>
+            <p id="change-password-success"></p>
+            <p id="change-password-failure"></p>
+          </section>
+          <section>
+            <form id="change-password">
+              <fieldset>
+                <legend>Change Password!</legend>
+                <input type="password"  name="passwords[old]" placeholder="Old Password" required> 
+                <input type="password" name="passwords[new]" placeholder="New Password" required>
+                <button>Change Password</button>
+              </fieldset> 
+            </form>
+
+            <button id="sign-out">Sign Out</button>
+          </section>
+        </main>
+      </body>
+      </div>
+</html>

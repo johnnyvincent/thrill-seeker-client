@@ -57,18 +57,19 @@
             </form> <hr>
             <h2>Get One Park</h2>
             <form id="park-search">
-              <input type="text" name="park[name]" placeholder="Park Name"  required> 
+              <input type="text" name="park[id]" placeholder="Enter Park ID"  required> 
               <button>Get Park</button>
             </form>
             <hr>
             <h2>Delete One Park</h2>
             <form id="park-delete">
-              <input type="text" name="park[name]" placeholder="Park Name"  required> 
+              <input type="text" name="park[id]" placeholder="Enter Park ID"  required> 
               <button>Delete Park</button>
             </form>
             <hr>
             <h2>Update One Park</h2>
             <form id="park-update">
+              <input type="text"  name="park[id]" placeholder="Enter Movie ID" required>
               <input type="text"  name="park[name]" placeholder="Park Name" required> 
               <input type="text" name="park[address]" placeholder="Address" required>
               <input type="text" name="park[theme]" placeholder="Theme" required>
@@ -84,7 +85,7 @@
               <button>Create Park</button>
             </form>
           </section>
-          <section> 
+          <!-- <section> 
             <h3>Event Bubbling Demo</h3>
             <div id="event-div">
               <button id="event-button">Click Me</button>
@@ -96,7 +97,7 @@
                 <button>Update Park Dynamic</button>
               </form>
             </div>
-          </section>
+          </section>  -->
   
           <section>
             <div id="parks-crud-error-message"></div>

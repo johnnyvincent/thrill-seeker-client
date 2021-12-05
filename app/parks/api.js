@@ -1,42 +1,57 @@
 'use strict'
 
 const config = require('../config')
-// const store = require('../store')
+const store = require('../store')
 
 const index = function () {
   return $.ajax({
-    url: config.apiOrigin + '/parks',
-    method: 'GET'
+    url: config.apiUrl + '/parks',
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
   })
 }
 
 const show = function (id) {
   return $.ajax({
-    url: config.apiOrigin + '/parks/' + id,
-    method: 'GET'
+    url: config.apiUrl + '/parks/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
   })
 }
 
 const destroy = function (id) {
   return $.ajax({
-    url: config.apiOrigin + '/parks/' + id,
-    method: 'DELETE'
+    url: config.apiUrl + '/parks/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
   })
 }
 
-const update = function (data) {
+const update = function (id, formData) {
   return $.ajax({
-    url: config.apiOrigin + '/parks/' + data.park.id,
+    url: config.apiUrl + '/parks/' + id,
     method: 'PATCH',
-    data
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: formData
   })
 }
 
-const create = function (data) {
+const create = function (formData) {
   return $.ajax({
-    url: config.apiOrigin + '/parks',
+    url: config.apiUrl + '/parks',
     method: 'POST',
-    data
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: formData
   })
 }
 

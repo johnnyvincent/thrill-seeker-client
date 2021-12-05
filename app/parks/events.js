@@ -42,39 +42,39 @@ const onGetParks = function (event) {
 
 const onGetPark = function (event) {
   event.preventDefault()
-
+  console.log('on getPark ran!')
   const form = event.target
   const formData = getFormFields(form)
-  console.log(formData)
-  const parkName = formData.park.name
-  api.show(parkName)
+
+  const id = formData.park.id
+  api.show(id)
     .then(ui.onGetParkSuccess)
     .catch(ui.onError)
 }
 
 const onDeletePark = function (event) {
   event.preventDefault()
+  console.log('onDeletePark ran!')
   const form = event.target
   const formData = getFormFields(form)
-  console.log(formData)
-
-  const parkName = formData.park.name
-  api.destroy(parkName)
+  const id = formData.park.id
+  api.destroy(id)
     .then(ui.onDeleteParkSuccess)
     .catch(ui.onError)
 }
 
 const onUpdatePark = function (event) {
   event.preventDefault()
+  console.log('onUpdateMovie ran!')
   const form = event.target
   const formData = getFormFields(form)
-  console.log(formData)
+  const id = formData.movie.id
 
   //   const parkName = formData.park.name
   //   const parkAddress = formData.park.address
   //   const parkTheme = formData.park.theme
   api
-    .update(formData)
+    .update(id, formData)
     .then(ui.onUpdateParkSuccess)
     .catch(ui.onError)
 }

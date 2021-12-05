@@ -59,16 +59,16 @@ const onDeletePark = function (event) {
   const formData = getFormFields(form)
   const id = formData.park.id
   api.destroy(id)
-    .then(ui.onDeleteParkSuccess)
+    .then(ui.onDestroyParkSuccess)
     .catch(ui.onError)
 }
 
 const onUpdatePark = function (event) {
   event.preventDefault()
-  console.log('onUpdateMovie ran!')
+  console.log('onUpdatePark ran!')
   const form = event.target
   const formData = getFormFields(form)
-  const id = formData.movie.id
+  const id = formData.park.id
 
   //   const parkName = formData.park.name
   //   const parkAddress = formData.park.address

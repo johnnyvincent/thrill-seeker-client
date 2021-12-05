@@ -4,8 +4,9 @@
 // const store = require('../store')
 
 const onGetParksSuccess = (responseData) => {
-  $('#parks-display').text('All Parks successfully received')
+  $('#update-success').text('All Parks successfully received').fadeOut(3000)
   $('#parks-display').removeClass()
+
   console.log('onIndexSuccess ran. responseData is :', responseData)
 
   let parksHtml = ''
@@ -52,12 +53,12 @@ const onDestroyParkSuccess = function (title = 'Park') {
 }
 
 const onUpdateParkSuccess = function () {
-  $('#parks-display').text('Park was updated successfully. Click on "Get All Parks" to get updated parks')
+  $('#update-success').text('Park was updated successfully. Click on "Get All Parks" to get updated parks').fadeOut(3000)
   $('form').trigger('reset')
 }
 
 const onCreateParkSuccess = function () {
-  $('#parks-display').text('Park was successfully created')
+  $('#update-success').text('Park was successfully created')
   $('form').trigger('reset')
 }
 

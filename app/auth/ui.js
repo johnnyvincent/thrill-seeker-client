@@ -24,7 +24,7 @@ const signUpFailure = function (error) {
 const signInSuccess = function (responseData) {
   store.user = responseData.user
   console.log('store is', store)
-  $('#sign-in-success').text('Signed in successfully!').fadeOut(3000)
+  $('#update-success').text('Signed in successfully!').fadeOut(3000)
 
   $('form').trigger('reset')
 

@@ -4,8 +4,7 @@
 // const store = require('../store')
 
 const onGetParksSuccess = (responseData) => {
-  $('#update-success').text('All Parks successfully received').fadeOut(3000)
-  $('#parks-display').removeClass()
+  $('#find-parks-success').text('All Parks successfully received').fadeOut(3000)
 
   console.log('onIndexSuccess ran. responseData is :', responseData)
 
@@ -14,6 +13,7 @@ const onGetParksSuccess = (responseData) => {
   parks.forEach(park => {
     parksHtml += `
         <div>
+            <p id="find-parks-success"></p>
             <h4>Name: ${park.name}</h4>
             <p>Address: ${park.address}</p>
             <p>Theme: ${park.theme}</p>
@@ -27,6 +27,7 @@ const onGetParksSuccess = (responseData) => {
 }
 
 const onGetParkSuccess = function (responseData) {
+  $('#find-park-success').text('Park was found. Scroll up to view.').fadeOut(3000)
   const park = responseData.park
   console.log(responseData)
   const parksHtml = `
@@ -43,7 +44,7 @@ const onGetParkSuccess = function (responseData) {
 }
 
 const onDestroyParkSuccess = function (title = 'Park') {
-  $('#parks-display').text(`${title} was destroyed successfully`)
+  $('#delete-park-success').text(`${title} was destroyed successfully`).fadeOut(3000)
   $('#parks-display').addClass('text-success')
   setTimeout(() => {
     $('#parks-display').html('')
@@ -53,12 +54,12 @@ const onDestroyParkSuccess = function (title = 'Park') {
 }
 
 const onUpdateParkSuccess = function () {
-  $('#update-success').text('Park was updated successfully. Click on "Get All Parks" to get updated parks').fadeOut(3000)
+  $('#update-park-success').text('Park was updated successfully. Click on "Get All Parks" to get updated parks').fadeOut(3000)
   $('form').trigger('reset')
 }
 
 const onCreateParkSuccess = function () {
-  $('#update-success').text('Park was successfully created')
+  $('#create-park-success').text('Park was successfully created').fadeOut(3000)
   $('form').trigger('reset')
 }
 

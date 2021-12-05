@@ -13,7 +13,10 @@
     </head>
 
     <h1 id="logo">A Thrill Seeker's Database</h1>
-
+    <p id="find-parks-success"></p>
+          <section>
+            <div id="parks-crud-error-message"></div>
+          </section>
     <p id="sign-out-success"></p>
     <p id="sign-up-success"></p>
     <p id="error-message"></p>
@@ -48,7 +51,10 @@
     <div class="container" id="after-sign-in">
 
       <body>
-        <div id="update-success"></div>
+        <section>
+          <div id="update-success"></div>
+        </section>
+        
         <div id="parks-display"></div>
         <main>
           <section> 
@@ -58,18 +64,21 @@
             </form> <hr>
             <h2>Get One Park</h2>
             <form id="park-search">
+              <p id="find-park-success"></p>
               <input type="text" name="park[id]" placeholder="Enter Park ID"  required> 
               <button>Get Park</button>
             </form>
             <hr>
             <h2>Delete One Park</h2>
             <form id="park-delete">
+              <p id="delete-park-success"></p>
               <input type="text" name="park[id]" placeholder="Enter Park ID"  required> 
               <button>Delete Park</button>
             </form>
             <hr>
             <h2>Update One Park</h2>
             <form id="park-update">
+              <p id="update-park-success"></p>
               <input type="text"  name="park[id]" placeholder="Enter Park ID" required>
               <input type="text"  name="park[name]" placeholder="Park Name" required> 
               <input type="text" name="park[address]" placeholder="Address" required>
@@ -80,6 +89,7 @@
   
             <h2>Create One Park</h2>
             <form id="park-create">
+              <p id="create-park-success"></p>
               <input type="text"  name="park[name]" placeholder="Enter Park Name" required> 
               <input type="text" name="park[address]" placeholder="Enter Park Address" required>
               <input type="text" name="park[theme]" placeholder="Enter Park Theme" required>
@@ -101,7 +111,7 @@
           </section>  -->
   
           <section>
-            <div id="parks-crud-error-message"></div>
+            <div id="change-password-update"></div>
           </section>
           <section>
             <form id="change-password">

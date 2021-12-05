@@ -5,8 +5,6 @@ const store = require('../store')
 const signUpSuccess = function (responseData) {
   $('#sign-up-success').text('Signed up successfully! Please sign in.').fadeOut(3000)
 
-  $('#sign-up-success').text('Signed up successfully!').fadeOut(3000)
-
   $('form').trigger('reset')
 
   console.log('responseData is', responseData)
@@ -14,8 +12,6 @@ const signUpSuccess = function (responseData) {
 
 const signUpFailure = function (error) {
   $('#error-message').text('Sign up failed, please try again').fadeOut(3000)
-
-  $('#error-message').removeClass()
   $('#error-message').addClass('text-danger')
 
   console.error('Error is', error)
@@ -45,7 +41,7 @@ const signInFailure = function (error) {
 const signOutSuccess = function (responseData) {
   $('#sign-out-success').text('Signed out successfully!').fadeOut(3000)
 
-  $('#form').trigger('reset')
+  $('form').trigger('reset')
 
   $('#after-sign-in').hide()
   $('#before-sign-in').show()
@@ -63,17 +59,18 @@ const signOutFailure = function (error) {
 }
 
 const changePasswordSuccess = function (responseData) {
-  $('#parks-crud-error-message').text('Password changed successfully!').fadeOut(3000)
+  $('#change-password-update').text('Password changed successfully!').fadeOut(3000)
+  $('#change-password-update').removeClass()
 
-  $('#form').trigger('reset')
+  $('form').trigger('reset')
   console.log('responseData is', responseData)
 }
 
-const changePasswordFailure = function (responseData) {
-  $('#parks-crud-error-message').text('Password change failed, please try again!').fadeOut(3000)
+const changePasswordFailure = function (error) {
+  $('#change-password-update').text('Password change failed, please try again!').fadeOut(3000)
+  $('#change-password-update').removeClass()
 
-  $('#form').trigger('reset')
-  console.log('responseData is', responseData)
+  console.log('error is ', error)
 }
 
 module.exports = {
